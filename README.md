@@ -36,7 +36,7 @@ You can follow the steps below to reproduce or review the project:
 - `NHANES_Cleaned_Ready.csv`: Final merged and cleaned dataset (2007–2020 NHANES data)
 - `README.md`: This file
 
-## 5. Notes for the Reviewer (Teacher / Marker)
+## 5. Notes for the Reviewer 
 
 - Please run the notebook in order — all cells have been executed and cleaned.
 - EDA has been completed through multiple visualisations: heatmaps, boxplots, scatter plots, and histograms.
@@ -49,5 +49,5 @@ You can follow the steps below to reproduce or review the project:
 
 Pritthika Dhar  
 Master of Artificial Intelligence and Machine Learning  
-University of Adelaide  
+The University of Adelaide  
 July 2025
