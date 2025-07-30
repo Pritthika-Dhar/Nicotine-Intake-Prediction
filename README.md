@@ -2,52 +2,51 @@
 
 ## 1. Overview
 
-This project aims to develop a regression model that can estimate how much nicotine (in milligrams per month) an individual can safely consume based on their biomedical health data, smoking behaviour, and serum cotinine levels. This is particularly relevant in light of Australia’s updated national laws that require pharmacist approval for vape products.
+This project develops and evaluates multiple supervised regression models to predict safe monthly nicotine intake based on individuals’ biomedical indicators, behavioural patterns, and log-transformed serum cotinine levels. The analysis is grounded in public health policy relevance, particularly in response to Australia's pharmacist-only vape regulations.
 
-Since no detailed Australian dataset was available with nicotine biomarkers, this project uses the US-based NHANES dataset (2007–2020), which contains clinically relevant features including serum cotinine as a measure of nicotine exposure. A custom dataset was created by merging six NHANES cycles and carefully selecting and engineering 40 features, later refined to 38 after cleaning.
-
-The final goal of this project is to support pharmacists or public health practitioners with a model that can generate personalised nicotine intake recommendations or warnings.
+Since no detailed Australian dataset was available, the project utilises data from the US-based NHANES (2007–2020). A clean and feature-rich dataset was created by merging six NHANES cycles, carefully selecting and engineering variables across biomedical, behavioural, and demographic domains. The final model aims to assist pharmacists and public health professionals in estimating nicotine exposure risks.
 
 ## 2. Setup
 
-This project is implemented in Python using a Jupyter Notebook. You can either:
+This project is implemented in Python using a Jupyter Notebook. You can:
 
-- **Run the notebook in Google Colab** (recommended, no setup needed), or  
-- **Run locally using Anaconda**, with required packages installed (e.g. pandas, matplotlib, seaborn, scikit-learn)
+- **Run the notebook in Google Colab** (recommended — no setup needed), or  
+- **Run locally via Anaconda**, with required packages such as pandas, matplotlib, seaborn, scikit-learn, and xgboost.
 
-The Jupyter notebook contains all steps: data import, preprocessing, exploratory data analysis, and preparation for modelling.
+The notebook includes all steps: from data import and preprocessing to model selection and performance evaluation.
 
 ## 3. How to Run This Project
 
-You can follow the steps below to reproduce or review the project:
+1. Open the notebook `Nicotine_Intake_Prediction.ipynb` in Jupyter or Colab  
+2. Ensure `NHANES_Cleaned_Ready.csv` is in the working directory or uploaded to Colab  
+3. Run all cells to explore:
 
-1. Open the file `Nicotine_Intake_Prediction.ipynb` in Jupyter or Google Colab
-2. Make sure the dataset `NHANES_Cleaned_Ready.csv` is in the same directory or mounted in Colab
-3. Run the notebook cell-by-cell to see:
-   - Dataset import and overview
-   - Data cleaning and missing value handling
-   - Feature engineering (e.g., blood pressure averaging)
-   - Exploratory data analysis and visualisations
-   - Project summary and future directions
+   - Data merging, cleaning, and log transformation
+   - Exploratory visualisations (e.g. histograms, scatter plots, correlation matrices)
+   - PCA transformation and comparison with original feature set
+   - Model training (Linear, Ridge, Random Forest, XGBoost, MLP)
+   - Performance evaluation using five metrics
+   - Final model selection based on predictive accuracy and robustness
 
 ## 4. Files in This Repository
 
-- `Nicotine_Intake_Prediction.ipynb`: Jupyter notebook with full analysis
-- `NHANES_Cleaned_Ready.csv`: Final merged and cleaned dataset (2007–2020 NHANES data)
-- `README.md`: This file
+- `Nicotine_Intake_Prediction.ipynb`: Full project notebook with modelling and analysis
+- `NHANES_Cleaned_Ready.csv`: Final cleaned and standardised dataset (2007–2020)
+- `Model_Comparison_Table_Bordered.png`: Summary table comparing best model results
+- `README.md`: Project summary and run instructions
 
-## 5. Notes for the Reviewer 
+## 5. Notes for the Reviewer (Teacher / Marker)
 
-- Please run the notebook in order — all cells have been executed and cleaned.
-- EDA has been completed through multiple visualisations: heatmaps, boxplots, scatter plots, and histograms.
-- All research justifications and report writing are included in the notebook comments and markdown cells.
-- Feature justification and explanation are provided in table format.
-- We have taken care to ensure all code is well-commented and output matches expectations.
-- If needed, additional NHANES cycles can be merged later to improve the model (discussed in Part 4 of the report).
+- All models were trained and evaluated on the original feature set after PCA was found to degrade performance.
+- Five models were tested: Linear Regression, Ridge Regression, Random Forest, XGBoost, and MLP.
+- Model refinement included hyperparameter tuning for Random Forest and XGBoost (e.g. tree depth, estimators, learning rate).
+- Evaluation metrics included R² score, MAE, RMSE, Median AE, and Explained Variance.
+- The tuned XGBoost model achieved the best overall performance and was selected as the final model.
+- Visual results are included throughout the notebook, and final comparison figures are exported as PNG files.
 
 ## 6. Author
 
 Pritthika Dhar  
 Master of Artificial Intelligence and Machine Learning  
-The University of Adelaide  
+University of Adelaide  
 July 2025
