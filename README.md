@@ -32,7 +32,6 @@ The notebook includes all steps: from data import and preprocessing to model sel
 
 - `Nicotine_Intake_Prediction.ipynb`: Full project notebook with modelling and analysis
 - `NHANES_Cleaned_Ready.csv`: Final cleaned and standardised dataset (2007–2020)
-- `Model_Comparison_Table_Bordered.png`: Summary table comparing best model results
 - `README.md`: Project summary and run instructions
 
 ## 5. Notes for the Reviewer (Teacher / Marker)
