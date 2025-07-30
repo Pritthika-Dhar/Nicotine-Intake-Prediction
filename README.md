@@ -34,7 +34,7 @@ The notebook includes all steps: from data import and preprocessing to model sel
 - `NHANES_Cleaned_Ready.csv`: Final cleaned and standardised dataset (2007–2020)
 - `README.md`: Project summary and run instructions
 
-## 5. Notes for the Reviewer (Teacher / Marker)
+## 5. Notes for the Reviewer 
 
 - All models were trained and evaluated on the original feature set after PCA was found to degrade performance.
 - Five models were tested: Linear Regression, Ridge Regression, Random Forest, XGBoost, and MLP.
